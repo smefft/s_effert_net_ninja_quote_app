@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
-
 class Quote {
   String? text;
   String? author;
-  String category = "";
-  int likes = 0;
+  String category;
 
   //  normal constructor, as we've already seen
 

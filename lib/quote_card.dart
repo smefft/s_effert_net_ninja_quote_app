@@ -40,18 +40,6 @@ class QuoteCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [Chip(label: Text(quote!.category))],
             ),
-            /*Row(
-              children: <Widget>[
-                IconButton(
-                  onPressed: () {
-                    quote?.likes += 1;
-                  },
-                  icon: Icon(Icons.thumb_up),
-                  color: Colors.amber[600],
-                ),
-                Text(quote!.likes.toString()),
-              ],
-            ),*/
           ],
         ),
       ),
