@@ -2,6 +2,7 @@ class Quote {
   String? text;
   String? author;
   String category;
+  int likes = 0;
 
   //  normal constructor, as we've already seen
 

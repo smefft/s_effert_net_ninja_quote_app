@@ -6,6 +6,8 @@ import 'color_palette.dart';
 void main() => runApp(MaterialApp(home: QuoteList()));
 
 class QuoteList extends StatefulWidget {
+  const QuoteList({super.key});
+
   @override
   _QuoteListState createState() => _QuoteListState();
 }
@@ -26,6 +28,12 @@ class _QuoteListState extends State<QuoteList> {
       text: 'The truth is rarely pure and never simple',
       category: 'Philosophical',
     ),
+    Quote(
+      author: 'Joan Didion',
+      text:
+          "I write entirely to find out what I'm thinking, what I'm looking at, "
+          "what I see and what it means. What I want and what I fear.",
+    ),
   ];
 
   @override
@@ -38,7 +46,18 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: dogwood('light'),
       ),
       body: Column(
-        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+        children: quotes
+            .map(
+              (quote) => QuoteCard(
+                quote: quote,
+                delete: () {
+                  setState(() {
+                    quotes.remove(quote);
+                  });
+                },
+              ),
+            )
+            .toList(),
       ),
     );
   }
