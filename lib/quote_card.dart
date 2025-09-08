@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'quote.dart';
+import 'color_palette.dart';
 
 class QuoteCard extends StatelessWidget {
   final Quote? quote;
@@ -9,11 +10,11 @@ class QuoteCard extends StatelessWidget {
   Color getCardColor() {
     switch (quote!.category) {
       case "Confidence":
-        return const Color.fromARGB(255, 188, 220, 248);
+        return mint();
       case "Philosophical":
-        return Colors.indigo[100]!;
+        return eggplant();
       default:
-        return Colors.grey[50]!;
+        return dogwood('ultralight');
     }
   }
 
@@ -21,6 +22,7 @@ class QuoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
+      color: getCardColor(),
       child: Container(
         padding: const EdgeInsets.all(12.0),
         color: getCardColor(),
@@ -29,12 +31,12 @@ class QuoteCard extends StatelessWidget {
           children: <Widget>[
             Text(
               quote!.text ?? "None",
-              style: TextStyle(fontSize: 18.0, color: Colors.grey[600]),
+              style: TextStyle(fontSize: 18.0, color: licorice()),
             ),
             SizedBox(height: 6.0),
             Text(
               quote!.author ?? "None",
-              style: TextStyle(fontSize: 14.0, color: Colors.grey[800]),
+              style: TextStyle(fontSize: 14.0, color: licorice()),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,

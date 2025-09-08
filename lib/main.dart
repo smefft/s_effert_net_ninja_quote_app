@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
 import 'quote_card.dart';
+import 'color_palette.dart';
 
 void main() => runApp(MaterialApp(home: QuoteList()));
 
@@ -30,11 +31,11 @@ class _QuoteListState extends State<QuoteList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: dogwood(null),
       appBar: AppBar(
-        title: Text('Awesome Quotes'),
+        title: Text('Awesome Quotes', style: TextStyle(color: licorice())),
         centerTitle: true,
-        backgroundColor: Colors.blueGrey[200],
+        backgroundColor: dogwood('light'),
       ),
       body: Column(
         children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
